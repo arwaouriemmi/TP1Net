@@ -1,0 +1,24 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "person by Id";
+}
+<div>
+      @{
+          if (Model.Count()==0){
+                  <div>ID n'est pas valide </div>
+          }
+          else{
+                <ul>
+                    <li>Id: @Model[0].id</li>
+                    <li>First_name: @Model[0].first_name</li>
+                    <li>Last_name: @Model[0].last_name</li>
+                    <li>Email: @Model[0].email</li>
+                    <li>Image: @Model[0].image</li>
+                    <li>Country: @Model[0].country</li>
+                </ul>
+          }
+          }
+    
+</div>
+
+

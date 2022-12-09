@@ -1,0 +1,36 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "form";
+}
+
+@{
+    if (ViewBag.notFound){
+        <div>la personne que vous cherchez n'existe pas </div>
+    }
+}
+@using (Html.BeginForm("search","Person",FormMethod.Post))
+{
+    <div>
+        <form>
+            <div>
+            <label> Enter first-name: </label>
+                @Html.TextBoxFor(model =>model.first_name,new
+            {
+            htmlAttributes=new { @class ="form-control"}
+
+            })
+            </div>
+            <div>
+                        <label> Enter country: </label>
+                                @Html.TextBoxFor(model =>model.country,new
+                            {
+                            htmlAttributes=new { @class ="form-control"}
+
+                            })
+           </div>
+            <input  type="submit" value="Submit Form" />
+        </form>
+
+    </div>
+}
+
